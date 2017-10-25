@@ -12,7 +12,7 @@ namespace OOPbase
         private int cardNumber; //Номер кредитной карты
         public int CardNumber
         {
-            set
+            private set
             {
                 cardNumber = value;
             }
@@ -24,13 +24,25 @@ namespace OOPbase
         private double balance;  //Баланс кредитной карты
         public double Balance
         {
-            set
+            private set
             {
                 balance = value;
             }
             get
             {
                 return balance;
+            }
+        }
+        private string holderName; //Имя владельца карты
+        public string HolderName
+        {
+            private set
+            {
+                holderName = value;
+            }
+            get
+            {
+                return holderName;
             }
         }
         public void MoneyWithDraw(double value) //Метод по снятию денег с карты
@@ -61,12 +73,18 @@ namespace OOPbase
         }
         public void GetInfo() //Метод возращает данные о карте
         {
-            Console.WriteLine($"{cardNumber}  {balance}");
+            Console.WriteLine($"Your card number:{cardNumber}  Your balance:{balance}  Your name:{holderName}");
         }
-        public void CreateCreditCard() //Метод по созданию новой карты
+        public void CreateCreditCard() //Метод по созданию  новой карты
         {
             Balance = 0;
-            CardNumber = RNG.Next(1, 10000);
+            CardNumber = RNG.Next(1, 5000);
+        }
+        public void CreateCreditCard(string name) // Перегрузка метода по созданию именной новой карты
+        {
+            Balance = 0;
+            CardNumber = RNG.Next(5001, 10000);
+            HolderName = name;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace OOPbase
             Console.WriteLine(human.IsSolvent(human.CreditCardMoney));
 
             CreditCard creditcard = new CreditCard();
-            creditcard.CreateCreditCard();
+            creditcard.CreateCreditCard("Petya");
             creditcard.MoneyPut(4000);
             creditcard.MoneyWithDraw(500);
             creditcard.GetInfo();
