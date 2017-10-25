@@ -8,6 +8,7 @@ namespace OOPbase
 {
     class CreditCard
     {
+        Random RNG = new Random();
         private int cardNumber; //Номер кредитной карты
         public int CardNumber
         {
@@ -57,6 +58,15 @@ namespace OOPbase
             {
                 Console.WriteLine("Incorrect Value");
             }
+        }
+        public void GetInfo() //Метод возращает данные о карте
+        {
+            Console.WriteLine($"{cardNumber}  {balance}");
+        }
+        public void CreateCreditCard() //Метод по созданию новой карты
+        {
+            Balance = 0;
+            CardNumber = RNG.Next(1, 10000);
         }
     }
 }

@@ -16,11 +16,10 @@ namespace OOPbase
             Console.WriteLine(human.IsSolvent(human.CreditCardMoney));
 
             CreditCard creditcard = new CreditCard();
-            creditcard.CardNumber = 1003013;
-            creditcard.Balance = 1000;
+            creditcard.CreateCreditCard();
+            creditcard.MoneyPut(4000);
             creditcard.MoneyWithDraw(500);
-            creditcard.MoneyPut(400);
-            Console.WriteLine(creditcard.Balance);
+            creditcard.GetInfo();
             Console.ReadKey();
         }
     }
