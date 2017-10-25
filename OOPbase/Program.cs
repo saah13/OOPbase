@@ -14,6 +14,13 @@ namespace OOPbase
             Console.WriteLine(human.IsAdult(human.Age));
             Console.WriteLine(human.IsSolvent(human.FirstName, human.LastName));
             Console.WriteLine(human.IsSolvent(human.CreditCardMoney));
+
+            CreditCard creditcard = new CreditCard();
+            creditcard.CardNumber = 1003013;
+            creditcard.Balance = 1000;
+            creditcard.MoneyWithDraw(500);
+            creditcard.MoneyPut(400);
+            Console.WriteLine(creditcard.Balance);
             Console.ReadKey();
         }
     }

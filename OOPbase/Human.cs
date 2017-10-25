@@ -8,10 +8,10 @@ namespace OOPbase
 {
     class Human
     {
-        public string FirstName { get;  set; } //Имя человека
-        public string LastName { get;  set; } //Фамилия человека
-        public int Age { get;  set; } //Возраст человека
-        public int CreditCardNumber { get;  set; } //Номер кредитной карты человека
+        public string FirstName { get; set; } //Имя человека
+        public string LastName { get; set; } //Фамилия человека
+        public int Age { get; set; } //Возраст человека
+        public int CreditCardNumber { get; set; } //Номер кредитной карты человека
         public double CreditCardMoney { get; set; } //Баланс кредитной карты человека
 
         public Human(string firstName, string lastName, int age, int creditCardNumber, double creditCardMoney) // Создаем параметрический конструктор
@@ -32,7 +32,7 @@ namespace OOPbase
             }
             else return false;
         }
-        public bool IsSolvent(string FirstName,string LastName) //Метод проверяющий по имени и фамилии может ли человек заплатить за проезд
+        public bool IsSolvent(string FirstName, string LastName) //Метод проверяющий по имени и фамилии может ли человек заплатить за проезд
         {
             if (CreditCardMoney >= 5)
             {
