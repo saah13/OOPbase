@@ -45,7 +45,7 @@ namespace OOPbase
                 return holderName;
             }
         }
-        public void MoneyWithDraw(double value) //Метод по снятию денег с карты
+        public void WithdrawMoney(double value) //Метод по снятию денег с карты
         {
             if (value > 0 && value <= balance)
             {
@@ -60,7 +60,7 @@ namespace OOPbase
                 Console.WriteLine("Incorrect Value");
             }
         }
-        public void MoneyPut(double value) //Метод по добавлению денег на карту
+        public void PutMoney(double value) //Метод по добавлению денег на карту
         {
             if (value > 0)
             {
@@ -75,16 +75,16 @@ namespace OOPbase
         {
             Console.WriteLine($"Your card number:{cardNumber}  Your balance:{balance}  Your name:{holderName}");
         }
-        public void CreateCreditCard() //Метод по созданию  новой карты
+        public CreditCard() //Создаем параметрический конструктор
         {
-            Balance = 0;
-            CardNumber = RNG.Next(1, 5000);
+            cardNumber = RNG.Next(1, 5000);
+            balance = 0;
         }
-        public void CreateCreditCard(string name) // Перегрузка метода по созданию именной новой карты
+        public CreditCard(string holderName) //Создаем перегрузку параметрического конструктора
         {
-            Balance = 0;
-            CardNumber = RNG.Next(5001, 10000);
-            HolderName = name;
+            cardNumber = RNG.Next(1, 5000);
+            balance = 0;
+            HolderName = holderName;
         }
     }
 }

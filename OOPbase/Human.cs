@@ -8,46 +8,43 @@ namespace OOPbase
 {
     class Human
     {
-        public string FirstName { get; set; } //Имя человека
-        public string LastName { get; set; } //Фамилия человека
-        public int Age { get; set; } //Возраст человека
-        public int CreditCardNumber { get; set; } //Номер кредитной карты человека
-        public double CreditCardMoney { get; set; } //Баланс кредитной карты человека
-
-        public Human(string firstName, string lastName, int age, int creditCardNumber, double creditCardMoney) // Создаем параметрический конструктор
+        private string firstName; //Имя человека
+        public string FirstName
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Age = age;
-            CreditCardNumber = creditCardNumber;
-            CreditCardMoney = creditCardMoney;
-        }
-
-
-        public bool IsSolvent(double CreditCardNumber) //Метод проверяющий по номеру карты может ли человек заплатить за проезд
-        {
-            if (CreditCardMoney >= 5)
+            protected set
             {
-                return true;
+                firstName = value;
             }
-            else return false;
-        }
-        public bool IsSolvent(string FirstName, string LastName) //Метод проверяющий по имени и фамилии может ли человек заплатить за проезд
-        {
-            if (CreditCardMoney >= 5)
+            get
             {
-                return true;
+                return firstName;
             }
-            else return false;
+        }
+        private string lastName; //Фамилия человека
+        public string LastName
+        {
+            protected set
+            {
+                lastName = value;
+            }
+            get
+            {
+                return lastName;
+            }
+        }
+        private int age; //Возраст человека
+        public int Age
+        {
+            internal protected set
+            {
+                age = value;
+            }
+            get
+            {
+                return age;
+            }
         }
 
-        public bool IsAdult(int Age) //Метод проверяющий совершеннолетний ли человек
-        {
-            if (Age >= 18)
-            {
-                return true;
-            }
-            else return false;
-        }
+
     }
 }

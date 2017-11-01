@@ -10,16 +10,13 @@ namespace OOPbase
     {
         static void Main(string[] args)
         {
-            Human human = new Human("Egor","Valere",33,332323,0.00);
-            Console.WriteLine(human.IsAdult(human.Age));
-            Console.WriteLine(human.IsSolvent(human.FirstName, human.LastName));
-            Console.WriteLine(human.IsSolvent(human.CreditCardMoney));
 
-            CreditCard creditcard = new CreditCard();
-            creditcard.CreateCreditCard("Petya");
-            creditcard.MoneyPut(4000);
-            creditcard.MoneyWithDraw(500);
+            CreditCard creditcard = new CreditCard("Valera");
+            DataGenerator data = new DataGenerator();
+            creditcard.PutMoney(4000);
+            creditcard.WithdrawMoney(500);
             creditcard.GetInfo();
+            Console.WriteLine(data.RandAge());
             Console.ReadKey();
         }
     }
