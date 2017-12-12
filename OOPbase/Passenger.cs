@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace OOPbase
 {
-    class Passenger : Human
+     class Passenger : Human
     {
-        DataGenerator data = new DataGenerator();
         private int stressMeter;//Показатель стресса 
         public int StressMeter
         {
@@ -23,10 +22,18 @@ namespace OOPbase
         }
         public Passenger(int startStress) //Создаем параметрический конструктор
         {
-            FirstName = data.RandName();
-            LastName = data.RandLastName();
-            Age = data.RandAge();
             stressMeter = startStress;
+            CreditCard.PutMoney(100);
+        }
+        public Passenger(string firstName, string lastName, int age, int startStress) : base(firstName, lastName, age)
+        {
+            stressMeter = startStress;
+            CreditCard.PutMoney(1000);
+        }
+        public override void PayForPassage()
+        {
+            CreditCard.WithdrawMoney(CityMoney.MetroDefaultPaymentPrice);
+            CityMoney.Invest(CityMoney.MetroDefaultPaymentPrice);
         }
 
     }

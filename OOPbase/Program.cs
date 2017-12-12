@@ -10,13 +10,18 @@ namespace OOPbase
     {
         static void Main(string[] args)
         {
-
             CreditCard creditcard = new CreditCard("Valera");
-            DataGenerator data = new DataGenerator();
+            List<int> names = new List<int>();
+            for (int i = 0; i < 5000; i++)
+            {
+                names.Add(DataGenerator.RandAge());
+            }
+            names = names.OrderBy(f => f).Reverse().ToList();
+
             creditcard.PutMoney(4000);
             creditcard.WithdrawMoney(500);
             creditcard.GetInfo();
-            Console.WriteLine(data.RandAge());
+            Console.WriteLine(DataGenerator.RandAge());
             Console.ReadKey();
         }
     }

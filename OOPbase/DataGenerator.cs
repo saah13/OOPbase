@@ -6,22 +6,27 @@ using System.Threading.Tasks;
 
 namespace OOPbase
 {
-    class DataGenerator
+    static class DataGenerator
     {
-       private string[] Names = { "aaron", "abdul", "abe", "abel", "abraham", "adam", "adan", "adolfo", "adolph", "adrian" , "abby", "abigail", "adele", "adrian" }; //Мужские имена
-       private string[] lastNames = { "abbott", "acosta", "adams", "adkins", "aguilar" }; //Фамилии
+        private static string[] Names = { "aaron", "abdul", "abe", "abel", "abraham", "adam", "adan", "adolfo", "adolph", "adrian", "abby", "abigail", "adele", "adrian" }; //Мужские имена
+        private static string[] lastNames = { "abbott", "acosta", "adams", "adkins", "aguilar" }; //Фамилии
 
-        internal string RandName() //Метод по генерации случайного имени 
+        static DataGenerator()
         {
-            return Names[new Random().Next(0, Names.Length)];
+            rand = new Random();
         }
-        internal string RandLastName() //Метод по генерации случайной фамилии
+        private static Random rand;
+        internal static string RandFirstName() //Метод по генерации случайного имени 
         {
-            return lastNames[new Random().Next(0, lastNames.Length)];
+            return Names[rand.Next(0, Names.Length)];
         }
-        internal int RandAge() //Метод по генерации случайного возраста
+        internal static string RandLastName() //Метод по генерации случайной фамилии
         {
-            return new Random().Next(1, 90); 
+            return lastNames[rand.Next(0, lastNames.Length)];
+        }
+        internal static int RandAge() //Метод по генерации случайного возраста
+        {
+            return rand.Next(1, 90);
         }
 
 

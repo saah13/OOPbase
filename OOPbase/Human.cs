@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace OOPbase
 {
-    class Human
+    abstract class Human
     {
-        private string firstName; //Имя человека
-        public string FirstName
+        #region Fields
+        private int age;
+        private string firstName;
+        private string lastName;
+        #endregion
+        #region Properties
+        public string FirstName//Имя человека
         {
             protected set
             {
@@ -20,8 +25,7 @@ namespace OOPbase
                 return firstName;
             }
         }
-        private string lastName; //Фамилия человека
-        public string LastName
+        public string LastName //Фамилия человека
         {
             protected set
             {
@@ -32,8 +36,7 @@ namespace OOPbase
                 return lastName;
             }
         }
-        private int age; //Возраст человека
-        public int Age
+        public int Age//Возраст человека
         {
             internal protected set
             {
@@ -44,7 +47,22 @@ namespace OOPbase
                 return age;
             }
         }
+        protected CreditCard CreditCard { get; private set; }
+        #endregion
 
+        public Human(string firstName = null, string lastName = null, int age = 0)
+        {
+            this.firstName = firstName ?? DataGenerator.RandFirstName();
+            this.lastName = lastName ?? DataGenerator.RandLastName();
+            this.age = age == 0 ? DataGenerator.RandAge() : age;
+            CreditCard = new CreditCard($"{firstName} {lastName}");
+        }
+
+        public abstract void PayForPassage();
+        public void Move()
+        {
+
+        }
 
     }
 }
